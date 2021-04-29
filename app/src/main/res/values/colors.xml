@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="textColor">#202020</color>
+    <color name="textColorHint">#A0A0A0</color>
+    <color name="textColorVice">#6C6C6C</color>
+    <color name="viewLineColor">#F0F0F0</color>
+
+
+    <!--gload-->
+    <color name="color_loading_status">#FFCCCCCC</color>
+    <color name="main_bg">#FF2D84C2</color>
+
+    <!--通用颜色-->
+    <color name="transparent">#0000</color>
+    <color name="deepRed"> #AB1128</color>
+    <color name="black">#000</color>
+    <color name="white">#ffffff</color>
+    <color name="lightRed">#FDE6E0</color>
+    <color name="red">#F44336</color>
+    <color name="pink">#CA6F6E</color>
+    <color name="green">#169259</color>
+    <color name="bgPage">#f7f7f7</color>
+    <color name="bgshade">#7F7F7F</color>
+
+    <!--其它-->
+    <color name="trans_black">#a000</color>
+    <color name="black_white">#555555</color>
+    <color name="bg_focus">#DDDDDD</color>
+    <color name="index_fl_bg_color">#00FFFFFF</color>
+</resources>

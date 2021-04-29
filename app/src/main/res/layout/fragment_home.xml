@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_channel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:tabMaxWidth="200dp"
+                app:tabMinWidth="20dp"
+                app:tabPaddingStart="12dp"
+                app:tabPaddingEnd="8dp"
+                android:background="@color/white"
+                app:tabIndicatorColor="@color/red"
+                app:tabMode="scrollable"
+                app:tabSelectedTextColor="@color/red"
+                app:tabTextAppearance="@style/TextAppearanceHome"
+                app:tabTextColor="@color/trans_black" />
+
+            <ImageView
+                android:id="@+id/iv_operation"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@mipmap/shadow_add_titlebar_new"
+                android:paddingLeft="5dp"
+                android:scaleType="center"
+                android:src="@mipmap/add_channel" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trans_black" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vp_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+</layout>

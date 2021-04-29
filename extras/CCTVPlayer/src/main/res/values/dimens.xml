@@ -1,0 +1,6 @@
+<resources>
+
+    <dimen name="cctv_videoview_rate_horizontal_padding">44dp</dimen>
+    <dimen name="cctv_videoview_rate_portrait_padding">30dp</dimen>
+
+</resources>

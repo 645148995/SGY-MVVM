@@ -1,0 +1,15 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+    }
+}
+
+dependencies {
+    compileOnly "androidx.appcompat:appcompat:$rootProject.ext.android.appCompatVersion"
+    api project(':fragmentation_core')
+}

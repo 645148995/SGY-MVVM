@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/fixedTopLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- 固定的返回键 -->
+        <RelativeLayout
+            android:id="@+id/backFixedLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/back" />
+        </RelativeLayout>
+
+        <!-- 子播放器的广告倒计时跳过按钮 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/subSkip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="11dp"
+                android:background="@drawable/cctv_ad_skip_bg"
+                android:includeFontPadding="false"
+                android:paddingLeft="5dp"
+                android:paddingTop="3dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="3dp"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:visibility="gone"
+                tools:text="跳过" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!-- 顶部控制栏 -->
+    <include layout="@layout/cctv_videoview_controller_top" />
+
+    <!-- 底部控制栏 -->
+    <include layout="@layout/cctv_videoview_controller_bottom" />
+
+    <!-- 暂停时显示的View -->
+    <com.cctv.cctvplayer.widget.PauseTipsView
+        android:id="@+id/pauseLayout"
+        layout="@layout/cctv_videoview_pause"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomLayout"
+        android:layout_below="@+id/topLayout" />
+
+    <LinearLayout
+        android:id="@+id/controllerLeftLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="30dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <!-- 锁屏按钮 -->
+        <com.cctv.cctvplayer.widget.PressDownImageView
+            android:id="@+id/lock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cctv_lock_selected"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/controllerCenterLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomLayout"
+        android:layout_below="@+id/topLayout"
+        android:layout_toLeftOf="@+id/controllerRightLayout"
+        android:layout_toRightOf="@+id/controllerLeftLayout"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/controllerRightLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        android:gravity="center"
+        android:orientation="vertical" />
+
+    <!-- 左下角，显示的自定义布局 -->
+    <LinearLayout
+        android:id="@+id/leftBottomLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="76dp"
+        android:gravity="center"
+        android:orientation="vertical" />
+
+    <!-- 子播放器的全屏按钮 -->
+    <com.cctv.cctvplayer.widget.PressDownImageView
+        android:id="@+id/subFullScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="7dp"
+        android:src="@drawable/full_screen"
+        android:visibility="gone" />
+</RelativeLayout>

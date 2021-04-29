@@ -1,0 +1,8 @@
+include ':extras:vrlib'
+include ':extras:CCTVPlayer'
+include ':extras:povPlayerCore'
+include ':fragmentation_core'
+include ':fragmentation'
+include ':mvvmhabit'
+include ':app'
+rootProject.name = "CtvitXiZang"

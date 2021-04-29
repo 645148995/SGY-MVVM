@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <!-- 主播放器布局 -->
+    <include
+        layout="@layout/cctv_videoview_main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- 子播放器布局 -->
+    <include
+        layout="@layout/cctv_videoview_sub_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- 控制栏 -->
+    <com.cctv.cctvplayer.CCTVVideoMediaController
+        android:id="@+id/controller"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- 亮度手势提示 -->
+    <com.cctv.cctvplayer.widget.LightTipsView
+        android:id="@+id/tipsview_light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+    <!-- 音量手势提示 -->
+    <com.cctv.cctvplayer.widget.VolumeTipsView
+        android:id="@+id/tipsview_volume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+    <!-- 手势滑动快进/快退提示的View -->
+    <com.cctv.cctvplayer.widget.ProgressTipsView
+        android:id="@+id/tipsview_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+    <!-- 右侧布局 -->
+    <include
+        android:id="@+id/rightContentLayout"
+        layout="@layout/cctv_videoview_right_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:visibility="gone" />
+</RelativeLayout>

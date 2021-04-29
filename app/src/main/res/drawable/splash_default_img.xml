@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/launch_img_bg" />
+<!--    <item-->
+<!--        android:width="@dimen/dp_154"-->
+<!--        android:height="@dimen/dp_130"-->
+<!--        android:drawable="@drawable/launch_img_slogan"-->
+<!--        android:gravity="center" />-->
+<!--    <item-->
+<!--        android:width="@dimen/dp_93"-->
+<!--        android:height="@dimen/dp_28"-->
+<!--        android:drawable="@drawable/launch_img_cctv"-->
+<!--        android:left="@dimen/dp_50"-->
+<!--        android:top="@dimen/dp_100" />-->
+<!--    <item-->
+<!--        android:width="@dimen/dp_360"-->
+<!--        android:height="@dimen/dp_88"-->
+<!--        android:bottom="@dimen/dp_120"-->
+<!--        android:drawable="@drawable/launch_img_building"-->
+<!--        android:gravity="bottom|fill_horizontal" />-->
+
+</layer-list>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="306dp"
+    android:layout_height="48dp"
+    android:background="@drawable/cctv_extend_ad_bg"
+    android:paddingLeft="6dp"
+    android:paddingRight="3dp">
+
+    <ImageView
+        android:id="@+id/extendImg"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="6dp" />
+
+    <ImageView
+        android:id="@+id/closeExtend"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/close" />
+
+    <TextView
+        android:id="@+id/extendTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/closeExtend"
+        android:layout_toRightOf="@+id/extendImg"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:lines="2"
+        android:textColor="#ffffff"
+        android:textSize="14dp"
+        tools:text="标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题a标题标题a" />
+</RelativeLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- 主播放器 -->
+    <com.easefun.povplayer.core.video.PolyvVideoView
+        android:id="@+id/videoview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000" />
+
+    <!-- 主播放器载入状态指示器 -->
+    <ImageView
+        android:id="@+id/loadingview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/cctv_video_loading"
+        android:visibility="gone" />
+
+    <!-- 主播放器在准备中，显示的视图 -->
+    <TextView
+        android:id="@+id/preparingview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#848e99"
+        android:gravity="center"
+        android:text="主播放器正在准备中..."
+        android:textColor="#ffffff"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/floatingLayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical" />
+</RelativeLayout>

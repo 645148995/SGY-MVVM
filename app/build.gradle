@@ -1,0 +1,101 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    defaultConfig {
+        applicationId rootProject.ext.android.applicationId
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    //自定义输出包名的设置
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            def createTime = new Date().format("yyyyMMdd", TimeZone.getTimeZone("GMT+8"))
+            outputFileName = "xizang_${defaultConfig.versionName}_${createTime}_${variant.buildType.name}.apk"
+        }
+
+
+    }
+//    //自动签名
+//    signingConfigs {
+//        debug {
+//            storeFile file('caijingonline.keystore')
+//            storePassword '1314159'
+//            keyAlias 'gohigh'
+//            keyPassword '1314159'
+//        }
+//        release {
+//            storeFile file('caijingonline.keystore')
+//            storePassword '1314159'
+//            keyAlias 'gohigh'
+//            keyPassword '1314159'
+//        }
+//    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    //使用dataBinding
+    dataBinding {
+        enabled true
+    }
+
+}
+
+dependencies {
+    //MVVMHabit
+    implementation project(':mvvmhabit')
+    //fragmentation框架
+    implementation project(':fragmentation')
+
+    //androidX依赖包
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    //support
+    implementation rootProject.ext.support["design"]
+    //底部tabBar
+    implementation('me.majiajie:pager-bottom-tab-strip:2.2.5') {
+        exclude group: 'com.android.support'
+    }
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+//    //内存泄漏测试
+//    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.3'
+//    debugImplementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.3'
+    //immersion bar
+    implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
+
+    //fastjson
+    implementation group: 'com.alibaba', name: 'fastjson', version: '1.2.62'
+    //smart:refresh-layout 下拉刷新库https://github.com/scwang90/SmartRefreshLayout
+    implementation 'com.scwang.smart:refresh-layout-kernel:2.0.1'      //核心必须依赖
+    implementation 'com.scwang.smart:refresh-footer-classics:2.0.1'    //经典加载
+    implementation 'com.scwang.smart:refresh-header-classics:2.0.1'    //经典刷新头
+    //LiveEventBus代替eventbus https://github.com/JeremyLiao/LiveEventBus
+    implementation 'com.jeremyliao:live-event-bus-x:1.7.2'
+    //Android App中全局加载中、加载失败及空数据视图
+    implementation 'com.billy.android:gloading:1.1.0'
+    //AgentWeb 是一个基于的 Android WebView ，极度容易使用以及功能强大的库
+    implementation 'com.just.agentweb:agentweb:4.1.3'
+
+
+    implementation 'me.weyye.ColorTrackTabLayout:library:1.0.1'
+    implementation 'com.github.chaychan:MultipleItemRvAdapter:1.0.4'
+
+}

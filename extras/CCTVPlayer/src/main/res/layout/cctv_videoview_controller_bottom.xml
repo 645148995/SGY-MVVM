@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottomLayout"
+    android:layout_width="match_parent"
+    android:layout_height="44dp"
+    android:layout_alignParentBottom="true"
+    android:paddingLeft="7dp"
+    android:paddingRight="7dp">
+
+    <com.cctv.cctvplayer.widget.PressDownImageView
+        android:id="@+id/playPause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:src="@drawable/cctv_play_or_pause_selected" />
+
+    <TextView
+        android:id="@+id/currenTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/playPause"
+        android:text="00:00"
+        android:textColor="#ffffff"
+        android:textSize="12dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_toLeftOf="@+id/rightLayout"
+        android:layout_toRightOf="@+id/currenTime">
+
+        <com.cctv.cctvplayer.widget.ScrollableSeekBar
+            android:id="@+id/playProgress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:max="100"
+            android:maxHeight="2dp"
+            android:minHeight="2dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:progressDrawable="@drawable/cctv_videoview_seek_progress"
+            android:thumb="@null"
+            android:thumbOffset="0dp" />
+
+        <!-- 进度条打点的View保持和ScrollableSeekBar的宽度一致 -->
+        <LinearLayout
+            android:id="@+id/playProgressNodeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal" />
+
+        <!-- 自定义thumb，为了方便在进度条上打点 -->
+        <com.cctv.cctvplayer.widget.ThumbImageView
+            android:id="@+id/thumbView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/thumb" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/rightLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.cctv.cctvplayer.widget.PressDownImageView
+            android:id="@+id/liveStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cctv_live_status_selected"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/endTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textColor="#ffffff"
+            android:textSize="12dp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/rightBottomLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/rate"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="3dp"
+                android:textColor="#ffffff"
+                android:textSize="14dp"
+                android:visibility="gone"
+                tools:text="标清" />
+        </LinearLayout>
+
+        <com.cctv.cctvplayer.widget.PressDownImageView
+            android:id="@+id/fullScreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/full_screen" />
+    </LinearLayout>
+</RelativeLayout>
